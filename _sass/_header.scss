@@ -1,0 +1,115 @@
+// ============================================================
+// Header / Hero
+// ============================================================
+
+.hero {
+  background: linear-gradient(135deg, var(--color-hero-from), var(--color-hero-to));
+  color: var(--color-hero-text);
+  padding: $sp-3xl $sp-lg;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-hero-text);
+  margin: 0 0 $sp-md;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  position: relative;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-hero-text-secondary);
+  margin-bottom: $sp-lg;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $sp-md;
+  font-size: 0.9rem;
+  color: var(--color-hero-text-secondary);
+  opacity: 0.85;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: $sp-xs;
+
+    & + span::before {
+      content: '·';
+      margin-right: $sp-md;
+      opacity: 0.5;
+    }
+  }
+}
+
+.hero-cta {
+  margin-top: $sp-xl;
+  display: flex;
+  gap: $sp-md;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+// Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $sp-sm;
+  padding: 10px 24px;
+  border-radius: $radius-full;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all $transition-fast;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--color-btn-primary-bg);
+  color: var(--color-btn-primary-text);
+  border-bottom: none;
+
+  &:hover {
+    background: var(--color-btn-primary-hover);
+    filter: brightness(1.1);
+    border-bottom: none;
+  }
+}
+
+.btn-secondary {
+  background: var(--color-btn-secondary-bg);
+  color: var(--color-hero-text);
+  border: 1px solid var(--color-btn-secondary-border);
+  border-bottom: 1px solid var(--color-btn-secondary-border);
+
+  &:hover {
+    background: var(--color-btn-secondary-hover);
+    border-bottom: 1px solid var(--color-btn-secondary-border);
+  }
+}

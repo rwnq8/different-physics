@@ -1,0 +1,46 @@
+<nav class="page-toc" id="page-toc" aria-label="On this page">
+  <h4 class="toc-header">On This Page</h4>
+  <ul class="toc-list" id="toc-list">
+    <!-- Populated by JS -->
+  </ul>
+</nav>
+
+<script>
+(function() {
+  'use strict';
+  var toc = document.getElementById('toc-list');
+  if (!toc) return;
+
+  var headings = document.querySelectorAll('.content h2[id], .content h3[id]');
+  if (headings.length === 0) {
+    document.getElementById('page-toc').style.display = 'none';
+    return;
+  }
+
+  headings.forEach(function(h) {
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    a.className = 'toc-link toc-' + h.tagName.toLowerCase();
+    li.appendChild(a);
+    toc.appendChild(li);
+  });
+
+  // IntersectionObserver for active TOC item
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      var id = entry.target.id;
+      var link = toc.querySelector('a[href="#' + id + '"]');
+      if (link) {
+        if (entry.isIntersecting) {
+          toc.querySelectorAll('.active').forEach(function(el) { el.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      }
+    });
+  }, { rootMargin: '-80px 0px -70% 0px' });
+
+  headings.forEach(function(h) { observer.observe(h); });
+})();
+</script>

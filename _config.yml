@@ -1,0 +1,21 @@
+title: "The Road Not Taken: Ultrametric Quantum Mechanics"
+description: "What Planck Should Have Measured (and What We'd Know If He Had) — A counterfactual history of how a forgotten metric from 1897 could have changed physics."
+baseurl: "/different-physics"
+url: "https://rwnq8.github.io"
+# google_analytics: G-XXXXXXXXXX  # Uncomment and add your GA4 measurement ID
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  footnote_backlink: "↩"
+sass:
+  style: compressed
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

@@ -1,0 +1,126 @@
+// ============================================================
+// Theme — CSS Custom Properties
+// ============================================================
+
+:root {
+  // Background
+  --color-bg: #fafbfc;
+  --color-bg-secondary: #f0f2f5;
+
+  // Text
+  --color-text: #1a1a2e;
+  --color-text-secondary: #5a6070;
+  --color-text-strong: #0d0d1a;
+  --color-heading: #0d0d1a;
+
+  // Links
+  --color-link: #1a6e5c;
+  --color-link-hover: #0d4739;
+
+  // Accent (forest green, evoking the "tree" theme)
+  --color-accent: #1a6e5c;
+  --color-accent-secondary: #2ecc71;
+
+  // Borders
+  --color-border: #dde1e7;
+  --color-border-light: #e8ecf2;
+
+  // Code
+  --color-code-bg: #f4f5f7;
+  --color-code-text: #1a1a2e;
+
+  // Blockquotes
+  --color-blockquote-bg: #f0f7f4;
+
+  // Tables
+  --color-table-stripe: #f8f9fb;
+  --color-table-hover: #eef5f2;
+
+  // Cards
+  --color-card-bg: #f8faf9;
+
+  // Highlight / glow
+  --color-highlight-bg: rgba(26, 110, 92, 0.12);
+
+  // Hover
+  --color-hover-bg: rgba(0,0,0,0.04);
+
+  // Hero
+  --color-hero-from: #0d2b24;
+  --color-hero-to: #1a5c4a;
+  --color-hero-text: #ffffff;
+  --color-hero-text-secondary: rgba(255,255,255,0.75);
+
+  // Sidebar
+  --color-sidebar-bg: #0d1f1a;
+  --color-sidebar-text: #dceed6;
+  --color-sidebar-text-secondary: rgba(220, 238, 214, 0.5);
+  --color-sidebar-border: rgba(255,255,255,0.08);
+  --color-sidebar-link: rgba(220, 238, 214, 0.7);
+  --color-sidebar-hover: rgba(255,255,255,0.06);
+  --color-sidebar-active-bg: rgba(26, 110, 92, 0.2);
+  --color-sidebar-input-bg: rgba(255,255,255,0.08);
+
+  // Buttons
+  --color-btn-primary-bg: #1a6e5c;
+  --color-btn-primary-text: #ffffff;
+  --color-btn-primary-hover: #145747;
+  --color-btn-secondary-bg: transparent;
+  --color-btn-secondary-border: rgba(255,255,255,0.4);
+  --color-btn-secondary-hover: rgba(255,255,255,0.1);
+}
+
+// Dark theme
+[data-theme="dark"] {
+  --color-bg: #0d1117;
+  --color-bg-secondary: #161b22;
+
+  --color-text: #c9d1d9;
+  --color-text-secondary: #8b949e;
+  --color-text-strong: #f0f6fc;
+  --color-heading: #f0f6fc;
+
+  --color-link: #3fb950;
+  --color-link-hover: #56d368;
+
+  --color-accent: #3fb950;
+  --color-accent-secondary: #2ea043;
+
+  --color-border: #30363d;
+  --color-border-light: #21262d;
+
+  --color-code-bg: #161b22;
+  --color-code-text: #c9d1d9;
+
+  --color-blockquote-bg: #161b22;
+
+  --color-table-stripe: #161b22;
+  --color-table-hover: #1c2128;
+
+  --color-card-bg: #161b22;
+
+  --color-highlight-bg: rgba(63, 185, 80, 0.15);
+
+  --color-hover-bg: rgba(255,255,255,0.04);
+
+  --color-hero-from: #0a1c14;
+  --color-hero-to: #0d2b24;
+  --color-hero-text: #f0f6fc;
+  --color-hero-text-secondary: rgba(240, 246, 252, 0.7);
+
+  --color-sidebar-bg: #0a1612;
+  --color-sidebar-text: #c9d1d9;
+  --color-sidebar-text-secondary: rgba(201, 209, 217, 0.5);
+  --color-sidebar-border: rgba(255,255,255,0.06);
+  --color-sidebar-link: rgba(201, 209, 217, 0.65);
+  --color-sidebar-hover: rgba(255,255,255,0.04);
+  --color-sidebar-active-bg: rgba(63, 185, 80, 0.15);
+  --color-sidebar-input-bg: rgba(255,255,255,0.06);
+
+  --color-btn-primary-bg: #3fb950;
+  --color-btn-primary-text: #0d1117;
+  --color-btn-primary-hover: #56d368;
+  --color-btn-secondary-bg: transparent;
+  --color-btn-secondary-border: rgba(240, 246, 252, 0.3);
+  --color-btn-secondary-hover: rgba(255,255,255,0.08);
+}

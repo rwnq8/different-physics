@@ -1,0 +1,20 @@
+# Jekyll build output
+_site/
+.sass-cache/
+
+# Ruby
+Gemfile.lock
+.bundle/
+vendor/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python (build scripts are source, not build artifacts)
+__pycache__/
+*.pyc

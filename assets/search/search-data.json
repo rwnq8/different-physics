@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1-the-problem",
+    "title": "1. The Problem",
+    "content": "Quantum mechanics is our most successful physical theory. It predicts the behavior of atoms, molecules, and light to ten decimal places. No experiment has ever contradicted it.",
+    "url": "/different-physics/#1-the-problem",
+    "level": "h2"
+  },
+  {
+    "id": "2-the-hidden-choice",
+    "title": "2. The Hidden Choice",
+    "content": "In December 1900, Max Planck presented his derivation of the blackbody radiation law to the German Physical Society in Berlin. His solution to the ultraviolet catastrophe introduced the quantum of action.",
+    "url": "/different-physics/#2-the-hidden-choice",
+    "level": "h2"
+  },
+  {
+    "id": "3-the-alternative",
+    "title": "3. The Alternative",
+    "content": "If you adopt Hensel's p-adic metric — distance by divisibility rather than magnitude — the geometry of the state space changes fundamentally. It is no longer a smooth, continuous surface. It is a tree.",
+    "url": "/different-physics/#3-the-alternative",
+    "level": "h2"
+  },
+  {
+    "id": "4-the-mechanism",
+    "title": "4. The Mechanism",
+    "content": "A concrete example makes the mechanism vivid. Consider four points on a simplified tree, each defined by a sequence of four binary choices (0 or 1, left or right).",
+    "url": "/different-physics/#4-the-mechanism",
+    "level": "h2"
+  },
+  {
+    "id": "5-the-resolution",
+    "title": "5. The Resolution",
+    "content": "When quantum mechanics is re-examined through the ultrametric lens, each of its foundational puzzles dissolves. The measurement problem, wave-particle duality, the Born rule, decoherence, nonlocality, and the irregularity of primes.",
+    "url": "/different-physics/#5-the-resolution",
+    "level": "h2"
+  },
+  {
+    "id": "6-the-evidence",
+    "title": "6. The Evidence",
+    "content": "A scientific proposal must be testable. The ultrametric paradigm makes specific, falsifiable predictions: log-periodic oscillations in the CMB, prime-modulated quantum noise, and threshold behavior in tree-structured gates.",
+    "url": "/different-physics/#6-the-evidence",
+    "level": "h2"
+  },
+  {
+    "id": "7-the-invitation",
+    "title": "7. The Invitation",
+    "content": "The Archimedean metric was never chosen. It was inherited. Planck did not decide to use it in 1900; he used it because it was the only geometry he knew. The choice is visible now.",
+    "url": "/different-physics/#7-the-invitation",
+    "level": "h2"
+  },
+  {
+    "id": "references",
+    "title": "References",
+    "content": "Hensel, K. (1897). Hilbert, D. (1897). Bruhat, F. and Tits, J. (1972). Monna, A. F. (1968). Shapiro, H. N. (1983). Vladimirov, V. S., Volovich, I. V., and Zelenov, E. I. (1994).",
+    "url": "/different-physics/#references",
+    "level": "h2"
+  }
+]

@@ -1,0 +1,66 @@
+// ============================================================
+// Images
+// ============================================================
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: $radius-md;
+  margin: $sp-md 0;
+}
+
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity $transition-normal;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+// Lightbox
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 1003;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  padding: $sp-lg;
+
+  &.open {
+    display: flex;
+  }
+
+  .lightbox-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    cursor: default;
+    border-radius: $radius-md;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: $sp-lg;
+    right: $sp-lg;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: $radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background $transition-fast;
+
+    &:hover {
+      background: rgba(255,255,255,0.3);
+    }
+  }
+}

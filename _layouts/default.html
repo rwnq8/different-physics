@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  {% if page.noindex %}
+  <meta name="robots" content="noindex">
+  {% endif %}
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/img/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+  <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/img/og-image.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "{{ page.title | default: site.title }}",
+    "description": "{{ page.description | default: site.description }}",
+    "author": {
+      "@type": "Person",
+      "name": "Rowan Brad Quni-Gudzinas"
+    },
+    "datePublished": "2026-05-03",
+    "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+    "inLanguage": "en"
+  }
+  </script>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+
+  <!-- Favicon (tree emoji SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>">
+
+  <!-- Font preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+  <!-- Site stylesheet -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.scss?v={{ site.time | date: '%s' }}">
+
+  {% if page.katex %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  {% endif %}
+
+  {% if page.math %}
+  <!-- MathJax inline config (must come BEFORE the CDN script) -->
+  <script>
+  {% raw %}
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$','$'],['\\(','\\)']],
+      displayMath: [['$$','$$'],['\\[','\\]']],
+      processEscapes: true
+    },
+    options: {
+      ignoreHtmlClass: 'no-mathjax'
+    }
+  };
+  {% endraw %}
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- MathJax CDN fallback -->
+  <script>
+  setTimeout(function(){
+    if(typeof MathJax === 'undefined'){
+      document.querySelectorAll('.MathJax_Preview').forEach(function(e){e.style.display='inline';});
+    }
+  }, 5000);
+  </script>
+  {% endif %}
+
+  {% if page.katex %}
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  {% endif %}
+
+  {% if page.clipboard %}
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+  {% endif %}
+
+  {% if page.analytics and page.no-tracking != true %}
+  {% include google-analytics.html %}
+  {% endif %}
+</head>
+<body>
+  <!-- Skip-to-content link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Progress bar -->
+  <div class="progress-bar" id="progress-bar"></div>
+
+  <!-- Mobile top bar -->
+  <div class="mobile-topbar" id="mobile-topbar">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+    <span class="topbar-title">{{ page.title | default: site.title }}</span>
+    <button class="theme-toggle-mobile" id="theme-toggle-mobile" aria-label="Toggle theme">🌓</button>
+  </div>
+
+  <!-- Sidebar overlay (for mobile) -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- App container -->
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar" aria-label="Table of Contents">
+      <div class="sidebar-brand">
+        <span class="brand-icon">🌳</span>
+        <span class="brand-title">{{ site.title }}</span>
+        <span class="version-badge">v0.11</span>
+      </div>
+      <div class="sidebar-search">
+        <input type="text" id="search-input" placeholder="Search… (Ctrl+K)" aria-label="Search document" disabled>
+      </div>
+      <nav id="sidebar-nav" aria-label="Document navigation">
+        <!-- Populated by JS from sidebar.json -->
+        <div class="skeleton-nav">
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line short"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line short"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line short"></div>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="https://github.com/rwnq8/different-physics" target="_blank" rel="noopener">📂 Repository</a>
+        <a href="{{ site.baseurl }}/0.11.md">📄 Raw Markdown</a>
+        <span>By Rowan Brad Quni-Gudzinas</span>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content" id="main-content">
+      {% if page.chapter %}
+      {% include breadcrumbs.html %}
+      {% endif %}
+
+      {% if page.hero %}
+      <!-- Hero banner -->
+      <header class="hero">
+        <h1 class="hero-title">{{ page.title | default: site.title }}</h1>
+        {% if page.subtitle %}
+        <p class="hero-subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+        <div class="hero-meta">
+          <span class="hero-author">Rowan Brad Quni-Gudzinas</span>
+          <span class="hero-date">May 2026</span>
+          {% if page.version %}
+          <span class="hero-version">{{ page.version }}</span>
+          {% endif %}
+          <span class="reading-time" id="reading-time">~{{ page.content | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
+        </div>
+        {% if page.hero_cta %}
+        <div class="hero-cta">
+          {% for btn in page.hero_cta %}
+          <a href="{{ btn.url }}" class="btn {{ btn.class }}">{{ btn.label }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </header>
+      {% endif %}
+
+      {% if page.toc %}
+      {% include toc.html %}
+      {% endif %}
+
+      {% if page.prev or page.next %}
+      {% include chapter-nav.html position="top" %}
+      {% endif %}
+
+      <!-- Page content -->
+      <article class="content">
+        {{ content }}
+      </article>
+
+      {% if page.prev or page.next %}
+      {% include chapter-nav.html position="bottom" %}
+      {% endif %}
+
+      {% include footer.html %}
+    </main>
+  </div>
+
+  <!-- Floating action button -->
+  <div class="fab" id="fab" aria-label="Scroll to top, long-press for theme">↑</div>
+
+  <!-- Search results overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-results-container" id="search-results-container">
+      <div class="search-results-header">
+        <input type="text" id="search-overlay-input" placeholder="Search…" aria-label="Search">
+        <button class="search-close" id="search-close" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-results" id="search-results" aria-live="polite"></div>
+    </div>
+  </div>
+
+  {% if page.js %}
+  <script src="{{ site.baseurl }}/assets/js/main.js?v={{ site.time | date: '%s' }}"></script>
+  {% endif %}
+
+  {% if page.search %}
+  <script src="{{ site.baseurl }}/assets/js/search.js?v={{ site.time | date: '%s' }}"></script>
+  {% endif %}
+
+  <!-- No-JS fallback -->
+  <noscript>
+    <div style="background:#fff3cd;color:#856404;padding:12px 20px;text-align:center;font-family:sans-serif;font-size:14px;border-bottom:1px solid #ffc107;">
+      JavaScript enhances this page. All content is readable without it.
+    </div>
+  </noscript>
+</body>
+</html>

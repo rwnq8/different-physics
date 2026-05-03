@@ -1,0 +1,30 @@
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="{{ site.baseurl }}/">Home</a>
+  <span class="separator">/</span>
+  {% if page.chapter_number %}
+  <span class="current">Chapter {{ page.chapter_number }}: {{ page.chapter_title | default: page.title }}</span>
+  {% else %}
+  <span class="current">{{ page.title }}</span>
+  {% endif %}
+</nav>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}{{ site.baseurl }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.title }}",
+      "item": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
+    }
+  ]
+}
+</script>

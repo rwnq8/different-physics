@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d2b24"/>
+      <stop offset="100%" style="stop-color:#1a5c4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="600" y="230" text-anchor="middle" font-family="Inter, sans-serif" font-size="72" font-weight="700" fill="#ffffff" letter-spacing="-2">The Road Not Taken</text>
+  <text x="600" y="310" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" font-weight="400" fill="rgba(255,255,255,0.75)">Ultrametric Quantum Mechanics</text>
+  <text x="600" y="380" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="400" fill="rgba(255,255,255,0.55)">What Planck Should Have Measured</text>
+  <text x="600" y="500" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="400" fill="rgba(255,255,255,0.4)">Rowan Brad Quni-Gudzinas · May 2026</text>
+  <text x="600" y="560" text-anchor="middle" font-family="Inter, sans-serif" font-size="100">🌳</text>
+</svg>

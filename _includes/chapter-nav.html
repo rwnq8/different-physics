@@ -1,0 +1,15 @@
+{% if page.prev or page.next %}
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  {% if page.prev %}
+  <a href="{{ page.prev }}" class="prev">← Previous</a>
+  {% else %}
+  <span class="prev disabled">← Previous</span>
+  {% endif %}
+
+  {% if page.next %}
+  <a href="{{ page.next }}" class="next">Next →</a>
+  {% else %}
+  <span class="next disabled">Next →</span>
+  {% endif %}
+</nav>
+{% endif %}
