@@ -6,14 +6,15 @@
 </nav>
 
 <script>
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
   'use strict';
   var toc = document.getElementById('toc-list');
   if (!toc) return;
 
   var headings = document.querySelectorAll('.content h2[id], .content h3[id]');
   if (headings.length === 0) {
-    document.getElementById('page-toc').style.display = 'none';
+    var container = document.getElementById('page-toc');
+    if (container) container.style.display = 'none';
     return;
   }
 
@@ -21,17 +22,16 @@
     var li = document.createElement('li');
     var a = document.createElement('a');
     a.href = '#' + h.id;
-    a.textContent = h.textContent;
+    a.textContent = h.textContent.replace(/#$/, '').trim();
     a.className = 'toc-link toc-' + h.tagName.toLowerCase();
     li.appendChild(a);
     toc.appendChild(li);
   });
 
-  // IntersectionObserver for active TOC item
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       var id = entry.target.id;
-      var link = toc.querySelector('a[href="#' + id + '"]');
+      var link = toc.querySelector('a[href="#' + CSS.escape(id) + '"]');
       if (link) {
         if (entry.isIntersecting) {
           toc.querySelectorAll('.active').forEach(function(el) { el.classList.remove('active'); });
@@ -42,5 +42,5 @@
   }, { rootMargin: '-80px 0px -70% 0px' });
 
   headings.forEach(function(h) { observer.observe(h); });
-})();
+});
 </script>
